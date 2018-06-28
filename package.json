@@ -1,0 +1,23 @@
+{
+  "name": "js-tdd-course",
+  "version": "1.0.0",
+  "description": "Biblioteca do curso de JS com TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidalves1/js-tdd-course.git"
+  },
+  "keywords": [
+    "js",
+    "tdd"
+  ],
+  "author": "davidalves1 <alves.david@outlook.com> (https://davidalves1.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidalves1/js-tdd-course/issues"
+  },
+  "homepage": "https://github.com/davidalves1/js-tdd-course#readme"
+}
