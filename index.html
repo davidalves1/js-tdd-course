@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Curso JS com TDD</title>
+  </head>
+  <body>
+    <p>Exercícios no console</p>
+    <script>
+      // FUNÇÕES ARRAY
+      console.log('--== ARRAYS ==--')
+      const list = document.querySelectorAll('li');
+      const listArr = Array.from(list);
+
+      const content = listArr.map(item => item.textContent);
+
+      // console.log(content);
+
+      // GENERATORS
+      console.log('--== GENERATORS ==--')
+      function getAjax(url) {
+        fetch(url)
+          .then(res => res.json())
+          .then(res => data.next(res));
+      }
+
+      function* getAllData() {
+        console.log('Buscando dados do github...')
+        const gh = yield getAjax('https://api.github.com/users/davidalves1');
+        console.log(gh);
+
+        console.log('Buscando dados dos animes...');
+        const anime = yield getAjax('https://api.jikan.moe/top/anime/1/tv');
+        console.log(anime);
+      }
+
+      // const data = getAllData();
+      // console.log(data.next());
+
+      // ASYNC / AWAIT
+      console.log('--== ASYNC / AWAIT ==--')
+      async function getRepos() {
+        const data = await fetch('https://api.github.com/users/davidalves1/repos?sort=created&direction=desc');
+        const jsonData = await data.json();
+
+        return jsonData.map(repo => {
+          console.log(repo.name);
+        });
+      }
+
+      getRepos();
+
+    </script>
+  </body>
+</html>
