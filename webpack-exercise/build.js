@@ -3922,7 +3922,19 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _int
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _ramda = __webpack_require__(/*! ramda */ \"./node_modules/ramda/es/index.js\");\n\nvar R = _interopRequireWildcard(_ramda);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nvar a = [1, 2, 2, 3, 4, 4];\nvar b = [2, 3, 3, 3, 5, 6, 6];\n\nvar c = R.union(a, b);\n\nconsole.warn(c);\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("\n\nvar _ramda = __webpack_require__(/*! ramda */ \"./node_modules/ramda/es/index.js\");\n\nvar _utils = __webpack_require__(/*! ./utils */ \"./src/utils.js\");\n\nvar _utils2 = _interopRequireDefault(_utils);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar a = [1, 2, 2, 3, 4, 4];\nvar b = [2, 3, 3, 3, 5, 6, 6];\n\nvar c = (0, _ramda.union)(a, b);\nconsole.warn(c);\n\nconsole.log('sum', (0, _utils2.default)(5, 2));\nconsole.log('sub', (0, _utils.sub)(5, 2));\nconsole.log('multi', (0, _utils.multi)(5, 2));\nconsole.log('div', (0, _utils.sub)(5, 2)); // 5 / 2 = 3 ???????\n\n//# sourceURL=webpack:///./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.sub = sub;\nfunction sum(a, b) {\n  return a + b;\n}\n\n// Pode haver apenas 1 default por arquivo\n// Por ser default pode ser chamado sem { } e o nome no import não precisa ser necessariamente o mesmo nome da função\nexports.default = sum;\n\n// Named export: deve ser sempre chamado no import com { }\n\nfunction sub(a, b) {\n  return a - b;\n};\n\nfunction multi(a, b) {\n  return a * b;\n}\n\nfunction div(a, b) {\n  return a / b;\n}\n\n// Outra forma de fazer o named export. É possível exportar vários métodos dessa forma também\nexports.multi = multi;\nexports.div = div;\n\n//# sourceURL=webpack:///./src/utils.js?");
 
 /***/ })
 

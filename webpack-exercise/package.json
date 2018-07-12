@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack --progress",
-    "watch": "npm run build -- --watch"
+    "dev": "npm run build -- --watch"
   },
   "keywords": [],
   "author": "davidalves1 <alves.david@outlook.com> (https://davidalves1.com/)",
