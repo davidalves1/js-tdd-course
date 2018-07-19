@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --progress",
-    "dev": "npm run build -- --watch"
+    "build": "NODE_ENV=development ./node_modules/.bin/webpack --progress",
+    "dev": "npm run build -- --watch",
+    "prod": "NODE_ENV=production ./node_modules/.bin/webpack --progress"
   },
   "keywords": [],
   "author": "davidalves1 <alves.david@outlook.com> (https://davidalves1.com/)",
