@@ -1,7 +1,5 @@
 import { union } from 'ramda';
 import somaFn, { sub, multi, div } from './utils';
-import React from 'react';
-import reactDOM from 'react-dom';
 
 const a = [1, 2, 2, 3, 4, 4];
 const b = [2, 3, 3, 3, 5, 6, 6];

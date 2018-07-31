@@ -3,6 +3,7 @@ const nodeENV = process.env.NODE_ENV || 'production';
 
 module.exports = {
   mode: nodeENV,
+  devtool: 'source-map', // Tipos: cheap-eval-source-map (mais leve, porém meno completo), eval-source-map (meio termo), source-map (mais pesado, porém mais completo)
   entry: {
     filename: './src/app.js'
   },
