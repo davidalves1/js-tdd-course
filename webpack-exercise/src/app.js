@@ -10,4 +10,4 @@ console.log(c);
 console.log('sum', somaFn(5, 2));
 console.log('sub', sub(5, 2));
 console.log('multi', multi(5, 2));
-console.log('div', sub(5, 2)); // 5 / 2 = 3 ???????
+console.log('div', div(19, 2));

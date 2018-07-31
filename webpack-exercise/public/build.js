@@ -15680,8 +15680,8 @@ console.log(c);
 
 console.log('sum', (0, _utils2.default)(5, 2));
 console.log('sub', (0, _utils.sub)(5, 2));
-console.log('multi', mult(5, 2));
-console.log('div', (0, _utils.sub)(5, 2)); // 5 / 2 = 3 ???????
+console.log('multi', (0, _utils.multi)(5, 2));
+console.log('div', (0, _utils.div)(12, 2));
 
 /***/ }),
 

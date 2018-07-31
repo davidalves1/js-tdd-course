@@ -8,8 +8,13 @@ module.exports = {
     filename: './src/app.js'
   },
   output: {
-    path: __dirname,
+    path: `${__dirname}/public`,
     filename: './build.js'
+  },
+  devServer: {
+    contentBase: `${__dirname}/public`,
+    compress: true,
+    port: 8001,
   },
   module: {
     rules: [
