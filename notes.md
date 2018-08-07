@@ -65,3 +65,41 @@
     }
   ```
 
+## Tipos de teste
+
+### Unitário
+É um simples e pequeno teste automatizado que prova o comportamento de um único método
+
+- Evite o ruído entre os testes (isolamento)
+- Escolha os melhores asserts para cada momento
+- Usar mocks (resposta fake) para chamadas externas
+
+### Serviço ou integração
+É um teste para validar se os componentes estão funcionando em conjunto
+
+- Cuidado para não criar um teste inútil
+- Isolar os ambientes de teste
+
+### UI ou Aceitação (E2E)
+- Teste realizado com o propósito de avaliar a qualidade externa do produto e, na medida do possível, também a qualidade em uso.
+
+- Validar **apenas** o fluxo de funcionamento do projeto
+
+## Spies, Stubs e Mocks
+
+### Spies
+Usados para vigiar informações sobre chamads de funções. Nos diz qual método foi chamado, quantas vezes, quais argumentos foram passados, etc
+
+#### Quando usar?
+São úteis para testar callbacks e como métodos são usados dentro do sistema. Permitem verificar se um método foi chamado dentro do método que você está testando
+
+### Stubs
+Parecidos com os spies, porém eles subsituem a função alvo, podendo mudar o seu comportamento e os valores e exxceções levantadas.
+
+#### Quando usar?
+- Controlar o comportamento de um teste
+- Pular uma parte não necessária do código
+- Simplificar o código assíncrono
+
+### Mocks
+São métodos falsos (como os spies), com comportamento pré-programado (como os stubs) e respostas pré-programadas.
