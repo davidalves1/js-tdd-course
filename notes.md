@@ -103,3 +103,6 @@ Parecidos com os spies, porém eles subsituem a função alvo, podendo mudar o s
 
 ### Mocks
 São métodos falsos (como os spies), com comportamento pré-programado (como os stubs) e respostas pré-programadas.
+
+#### Quando usar?
+São utilizados quando se precisa de um stub, mas precisa verificar múltiplos comportamentos num específico ponto
