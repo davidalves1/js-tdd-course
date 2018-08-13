@@ -106,3 +106,14 @@ São métodos falsos (como os spies), com comportamento pré-programado (como os
 
 #### Quando usar?
 São utilizados quando se precisa de um stub, mas precisa verificar múltiplos comportamentos num específico ponto
+
+
+## Hooks
+Os hooks são triggers que podem ser executados em determinados momentos para auxiliar nos testes.
+
+- before: executam antes de iniciar os testes
+- beforeEach: executa antes de cada caso de teste (it)
+- after: executam após todos os casos de teste
+- afterEach: executa após cada caso de teste
+
+Ex: [Hooks example](tdd-basic/tests/hooks.spec.js)

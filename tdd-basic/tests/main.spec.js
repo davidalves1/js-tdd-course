@@ -15,6 +15,7 @@ describe('Main', () => {
     context('Case 2', () => {
       it('should happen blublublu', () => {
         // Espero que aconteça blublublu
+        throw Error('Deu erro');
       });
     });
   });
