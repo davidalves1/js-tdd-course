@@ -1,5 +1,5 @@
 // Hooks Example
-describe('Exemplo de utilização de hooks', () => {
+describe.skip('Exemplo de utilização de hooks', () => {
   before(() => {
     console.log('before');
   });
