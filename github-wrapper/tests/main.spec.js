@@ -14,11 +14,11 @@ import {
 describe('Github Wrapper', () => {
   // Garante que a lib tem os métodos que foram previstos
   describe('Smoke tests', () => {
-    it('should exists the seach method', () => {
+    it('should exists the searchUser method', () => {
       expect(searchUser).to.exist;
     });
 
-    it('should exists the searchAlbums method', () => {
+    it('should exists the searchUserRepos method', () => {
       expect(searchUserRepos).to.exist;
     });
   });
@@ -28,7 +28,7 @@ describe('Github Wrapper', () => {
 
   beforeEach(() => {
     fetchedStub = sinon.stub(global, 'fetch');
-    // Simula a responsta da promise no then 'res.json()'
+    // Simula a resposta da promise no then 'res.json()'
     promise = fetchedStub.resolves({ json: () => ({ name: 'David Alves' }) });
   });
 
