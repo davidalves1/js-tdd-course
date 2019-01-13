@@ -7,60 +7,55 @@ chai.use(sinonChai);
 global.fetch = require('node-fetch');
 
 import {
-  searchUser,
-  searchUserRepos,
-} from '../src/app';
+  getUser,
+} from '../src/user';
 
-describe('Github Wrapper', () => {
+describe('User', () => {
   // Garante que a lib tem os métodos que foram previstos
   describe('Smoke tests', () => {
-    it('should exists the searchUser method', () => {
-      expect(searchUser).to.exist;
-    });
-
-    it('should exists the searchUserRepos method', () => {
-      expect(searchUserRepos).to.exist;
+    it('should exists the getUser method', () => {
+      expect(getUser).to.exist;
     });
   });
 
-  let fetchedStub;
+  let stubeFetch;
   let promise;
 
   beforeEach(() => {
-    fetchedStub = sinon.stub(global, 'fetch');
+    stubeFetch = sinon.stub(global, 'fetch');
     // Simula a resposta da promise no then 'res.json()'
-    promise = fetchedStub.resolves({ json: () => ({ name: 'David Alves' }) });
+    promise = stubeFetch.resolves({ json: () => ({ name: 'David Alves' }) });
   });
 
   afterEach(() => {
-    fetchedStub.restore();
+    stubeFetch.restore();
   });
 
-  describe('User search', () => {
+  describe('getUser', () => {
 
     it('should call fetch function', () => {
-      const user = searchUser();
+      const user = getUser();
 
-      expect(fetchedStub).to.have.been.calledOnce;
+      expect(stubeFetch).to.have.been.calledOnce;
     });
 
     it('should receive the correct url to fetch', () => {
       context('passing one type', () => {
-        const david = searchUser('davidalves1');
+        const david = getUser('davidalves1');
 
-        expect(fetchedStub).to.have.been
+        expect(stubeFetch).to.have.been
           .calledWith('https://api.github.com/users/davidalves1');
 
-        const willian = searchUser('willianjusten');
+        const willian = getUser('willianjusten');
 
-        expect(fetchedStub).to.have.been
+        expect(stubeFetch).to.have.been
           .calledWith('https://api.github.com/users/willianjusten');
       });
     });
 
 
     it('should return the JSON data from the promise', () => {
-      const user = searchUser('davidalves1');
+      const user = getUser('davidalves1');
 
       user.then(data => {
         // eql = deep equal

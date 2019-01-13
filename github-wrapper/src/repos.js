@@ -1,4 +1,5 @@
-import env from '../config/env';
+import config from '../config';
+import { toJson } from './utils';
 
 export const getUserRepos = username =>
-  fetch(`${env.GITHUB_URL}/users/${username}/repos`)
+  fetch(`${config.GITHUB_URL}/users/${username}/repos`).then(toJson)
