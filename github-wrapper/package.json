@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clear": "rm -rf lib",
-    "build": "./node_modules/.bin/babel --out-dir lib src",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:umd": "NODE_ENV=development ./node_modules/.bin/webpack --output-filename github-wrapper.umd.js",
+    "build:umd:min": "NODE_ENV=production ./node_modules/.bin/webpack --output-filename github-wrapper.umd.min.js",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "build:watch": "npm run build -- --watch",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "npm test -- --watch",
